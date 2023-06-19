@@ -2110,3 +2110,11 @@ y[229] = /forceset/extobl_l/fiber_length
 [2023-06-19 11:05:40.232] [info] Storage: read data file = C:\Users\PC\Documents\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\normal.mot (nr=51 nc=18)
 [2023-06-19 11:08:23.199] [info] Storage: read data file = C:\Users\PC\Documents\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\crouch1.mot (nr=120 nc=18)
 [2023-06-19 11:08:45.566] [info] Storage: read data file = C:\Users\PC\Documents\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\crouch1.mot (nr=120 nc=18)
+[2023-06-19 11:24:08.732] [info] Updating Model file from 20303 to latest format...
+[2023-06-19 11:24:08.802] [info] Loaded model 3DGaitModel2392 from file C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\gait2392_simbody.osim
+[2023-06-19 11:24:08.807] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2023-06-19 11:24:08.810] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2023-06-19 11:24:28.607] [info] Updating Model file from 20303 to latest format...
+[2023-06-19 11:24:28.672] [info] Loaded model 3DGaitModel2392 from file C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\gait2392_simbody.osim
+[2023-06-19 11:24:28.678] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2023-06-19 11:24:28.680] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
