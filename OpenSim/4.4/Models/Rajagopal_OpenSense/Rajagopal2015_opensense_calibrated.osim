@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <OpenSimDocument Version="40000">
-	<Model name="OpenSense_Subject">
+	<Model name="OpenSense_Subject_calibrated">
 		<!--The model's ground reference frame.-->
 		<Ground name="ground">
 			<!--The geometry used to display the axes of this Frame.-->
@@ -1048,6 +1048,24 @@
 					<inertia>0.000108152 0.00018391499999999999 0.00018391499999999999 0 0 0</inertia>
 				</Body>
 				<Body name="femur_l">
+					<!--List of components that this component owns and serializes.-->
+					<components>
+						<PhysicalOffsetFrame name="femur_l_imu">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>..</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 -0.16385 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>-0.62921796660816409 -1.307677217860727 0.98048270185249031</orientation>
+						</PhysicalOffsetFrame>
+					</components>
 					<!--The geometry used to display the axes of this Frame.-->
 					<FrameGeometry name="frame_geometry">
 						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
@@ -1339,6 +1357,24 @@
 					<inertia>0.13106000000000001 0.034355499999999997 0.13820499999999999 0 0 0</inertia>
 				</Body>
 				<Body name="tibia_l">
+					<!--List of components that this component owns and serializes.-->
+					<components>
+						<PhysicalOffsetFrame name="tibia_l_imu">
+							<!--The geometry used to display the axes of this Frame.-->
+							<FrameGeometry name="frame_geometry">
+								<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
+								<socket_frame>..</socket_frame>
+								<!--Scale factors in X, Y, Z directions respectively.-->
+								<scale_factors>0.20000000000000001 0.20000000000000001 0.20000000000000001</scale_factors>
+							</FrameGeometry>
+							<!--Path to a Component that satisfies the Socket 'parent' of type C (description: The parent frame to this frame.).-->
+							<socket_parent>..</socket_parent>
+							<!--Translational offset (in meters) of this frame's origin from the parent frame's origin, expressed in the parent frame.-->
+							<translation>0 -0.202735 0</translation>
+							<!--Orientation offset (in radians) of this frame in its parent frame, expressed as a frame-fixed x-y-z rotation sequence.-->
+							<orientation>-1.8777568562125007 -1.4917096598921273 0.095623591180612158</orientation>
+						</PhysicalOffsetFrame>
+					</components>
 					<!--The geometry used to display the axes of this Frame.-->
 					<FrameGeometry name="frame_geometry">
 						<!--Path to a Component that satisfies the Socket 'frame' of type Frame.-->
@@ -5239,6 +5275,7 @@
 					</frames>
 				</UniversalJoint>
 			</objects>
+			<groups />
 		</JointSet>
 		<!--Controllers that provide the control inputs for Actuators.-->
 		<ControllerSet name="controllerset">
@@ -5286,6 +5323,7 @@
 		<!--Forces in the model (includes Actuators).-->
 		<ForceSet name="forceset">
 			<objects />
+			<groups />
 		</ForceSet>
 		<!--Geometry to be used in contact forces.-->
 		<ContactGeometrySet name="contactgeometryset">
@@ -5299,7 +5337,16 @@
 		</ProbeSet>
 		<!--Additional components in the model.-->
 		<ComponentSet name="componentset">
-			<objects />
+			<objects>
+				<IMU name="tibia_l_imu">
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which the IMU is attached.).-->
+					<socket_frame>/bodyset/tibia_l/tibia_l_imu</socket_frame>
+				</IMU>
+				<IMU name="femur_l_imu">
+					<!--Path to a Component that satisfies the Socket 'frame' of type PhysicalFrame (description: The frame to which the IMU is attached.).-->
+					<socket_frame>/bodyset/femur_l/femur_l_imu</socket_frame>
+				</IMU>
+			</objects>
 			<groups />
 		</ComponentSet>
 	</Model>

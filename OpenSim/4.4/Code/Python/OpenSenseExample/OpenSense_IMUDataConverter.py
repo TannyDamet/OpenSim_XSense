@@ -25,6 +25,7 @@
 # Run this script from the OpenSenseExampleFiles directory. 
 
 # Import the opensim libraries
+!pip opensim
 import opensim as osim
 
 # Build an Xsens Settings Object. 

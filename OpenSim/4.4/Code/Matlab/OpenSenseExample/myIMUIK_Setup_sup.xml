@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="44000">
+  <IMUInverseKinematicsTool>
+    <!--The time range for the study.-->
+    <time_range>0 20</time_range>
+    <!--Space fixed Euler angles (XYZ order) from IMU Space to OpenSim. Default to (0, 0, 0).-->
+    <sensor_to_opensim_rotations>-1.570796 0 0</sensor_to_opensim_rotations>
+    <!--Name/path to the xml .osim file used to load a model to be analyzed.-->
+    <model_file>Rajagopal_2015_sup_calibrated.osim</model_file>
+    <!--Name/path to a .sto file of sensor frame orientations as quaternions.-->
+    <orientations_file>Xsens_quaternion.sto</orientations_file>
+      <results_directory>IKResults</results_directory>
+    <coord_task>
+        <coord_name>pelvis_tilt</coord_name>
+        <weight>0.0</weight>
+    </coord_task>
+    <coord_task>
+        <coord_name>pelvis_list</coord_name>
+        <weight>0.0</weight>
+    </coord_task>
+    <coord_task>
+        <coord_name>pelvis_rotation</coord_name>
+        <weight>0.0</weight>
+    </coord_task>
+    <coord_task>
+        <coord_name>pelvis_tx</coord_name>
+        <weight>0.0</weight>
+    </coord_task>
+    <coord_task>
+        <coord_name>pelvis_ty</coord_name>
+        <weight>0.0</weight>
+    </coord_task>
+    <coord_task>
+        <coord_name>pelvis_tz</coord_name>
+        <weight>0.0</weight>
+    </coord_task>
+  </IMUInverseKinematicsTool>
+</OpenSimDocument>
+
+
