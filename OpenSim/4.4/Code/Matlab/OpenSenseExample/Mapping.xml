@@ -1,0 +1,33 @@
+<XsensDataReaderMapping>
+  <XsensSensor name="Xsens_4">
+    <XsensData name="PacketCounter" channel="PacketCounter" />
+    <XsensData name="SampleTimeFine" channel="SampleTimeFine" />
+    <XsensData name="Quat_W" channel="Quat_W" />
+    <XsensData name="Quat_X" channel="Quat_X" />
+    <XsensData name="Quat_Y" channel="Quat_Y" />
+    <XsensData name="Quat_Z" channel="Quat_Z" />
+    <XsensData name="Acc_X" channel="Acc_X" />
+    <XsensData name="Acc_Y" channel="Acc_Y" />
+    <XsensData name="Acc_Z" channel="Acc_Z" />
+    <XsensData name="Gyr_X" channel="Gyr_X" />
+    <XsensData name="Gyr_Y" channel="Gyr_Y" />
+    <XsensData name="Gyr_Z" channel="Gyr_Z" />
+    <XsensData name="Status" channel="Status" />
+  </XsensSensor>
+
+  <XsensSensor name="Xsens_5">
+    <XsensData name="PacketCounter" channel="PacketCounter" />
+    <XsensData name="SampleTimeFine" channel="SampleTimeFine" />
+    <XsensData name="Quat_W" channel="Quat_W" />
+    <XsensData name="Quat_X" channel="Quat_X" />
+    <XsensData name="Quat_Y" channel="Quat_Y" />
+    <XsensData name="Quat_Z" channel="Quat_Z" />
+    <XsensData name="Acc_X" channel="Acc_X" />
+    <XsensData name="Acc_Y" channel="Acc_Y" />
+    <XsensData name="Acc_Z" channel="Acc_Z" />
+    <XsensData name="Gyr_X" channel="Gyr_X" />
+    <XsensData name="Gyr_Y" channel="Gyr_Y" />
+    <XsensData name="Gyr_Z" channel="Gyr_Z" />
+    <XsensData name="Status" channel="Status" />
+  </XsensSensor>
+</XsensDataReaderMapping>
