@@ -7,7 +7,7 @@ xsensSettings = XsensDataReaderSettings('myIMUMappings_4_5.xml'); %
 xsensReader = XsensDataReader(xsensSettings);
 
 % Read the quaternion data and write it to a STO file for in OpenSense workflow
-tables = xsensReader.read('IMU_Data/Nouveau dossier/');
+tables = xsensReader.read('IMU_Data/Prise_1/Sup/');
 
 % Get the orientations table from the loaded data
 quaternionTable = xsensReader.getOrientationsTable(tables);
