@@ -1,0 +1,44 @@
+<MeasurementSet name="gait2354"> 
+ 
+  <objects> 
+ 
+    <!– . . additional <Measurement> tags cut for brevity . . –> 
+ 
+    <Measurement name="thigh"> 
+ 
+      <apply> true </apply> 
+ 
+      <MarkerPairSet> 
+        <objects> 
+          <MarkerPair> 
+            <markers> R.ASIS R.Knee.Lat </markers> 
+          </MarkerPair> 
+          <MarkerPair> 
+            <markers> L.ASIS L.Knee.Lat </markers> 
+          </MarkerPair> 
+        </objects> 
+      </MarkerPairSet> 
+ 
+      <BodyScaleSet> 
+         <objects> 
+          <BodyScale name="femur_r"> 
+            <axes> X Y Z </axes> 
+          </BodyScale> 
+          <BodyScale name="femur_l"> 
+            <axes> X Y Z </axes> 
+          </BodyScale> 
+          <BodyScale name="patella_r"> 
+            <axes> X Y Z </axes> 
+          </BodyScale> 
+          <BodyScale name="patella_l"> 
+            <axes> X Y Z </axes> 
+          </BodyScale> 
+        </objects> 
+      </BodyScaleSet> 
+ 
+    </Measurement> 
+ 
+    <!– . . additional <Measurement> tags cut for brevity . . –> 
+ 
+  </objects> 
+</MeasurementSet>

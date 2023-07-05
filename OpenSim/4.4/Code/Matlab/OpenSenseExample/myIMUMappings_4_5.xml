@@ -5,13 +5,25 @@
 		<trial_prefix>Xsens</trial_prefix>
 		<!-- List of Experimental sensors and desired associated names in resulting tables -->
 		<ExperimentalSensors>
+			<ExperimentalSensor name="_1">
+				<!-- The name of the PhysicalFrame representing a sensor (IMU) in the Model. When loading sensor data, it will be used as a table column label. -->
+				<name_in_model>torso_imu</name_in_model>
+			</ExperimentalSensor>
+			<ExperimentalSensor name="_2">
+				<!-- The name of the PhysicalFrame representing a sensor (IMU) in the Model. When loading sensor data, it will be used as a table column label. -->
+				<name_in_model>humerus_l_imu</name_in_model>
+			</ExperimentalSensor>
 			<ExperimentalSensor name="_3">
 				<!-- The name of the PhysicalFrame representing a sensor (IMU) in the Model. When loading sensor data, it will be used as a table column label. -->
-				<name_in_model>r_humerus_imu</name_in_model>
+				<name_in_model>radius_l_imu</name_in_model>
 			</ExperimentalSensor>
 			<ExperimentalSensor name="_4">
 				<!-- The name of the PhysicalFrame representing a sensor (IMU) in the Model. When loading sensor data, it will be used as a table column label. -->
-				<name_in_model>r_ulna_radius_hand_imu</name_in_model>
+				<name_in_model>humerus_r_imu</name_in_model>
+			</ExperimentalSensor>
+			<ExperimentalSensor name="_5">
+				<!-- The name of the PhysicalFrame representing a sensor (IMU) in the Model. When loading sensor data, it will be used as a table column label. -->
+				<name_in_model>radius_r_imu</name_in_model>
 			</ExperimentalSensor>
 		</ExperimentalSensors>
         <!-- Add metadata -->

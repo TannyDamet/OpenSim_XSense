@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ 
+<MarkerSet name="Rajagopal_Scale"> 
+ 
+   <objects> 
+ 
+      <Marker name="Sternum"> 
+         <location> 0.07 0.3 0 </location> 
+         <body> torso </body> 
+         <fixed> false </fixed> 
+      </Marker> 
+ 
+      <Marker name="R.Acromium"> 
+         <location> -0.03 0.44 0.15 </location> 
+         <body> torso </body> 
+         <fixed> false </fixed> 
+      </Marker> 
+ 
+      <Marker name="L.Acromium"> 
+         <location> -0.03 0.44 -0.15 </location> 
+         <body> torso </body> 
+         <fixed> false </fixed> 
+      </Marker> 
+ 
+      <Marker name="Top.Head"> 
+         <location>0.00084 0.657 0.0</location> 
+         <body> torso </body> 
+         <fixed> false </fixed> 
+      </Marker> 
+ 
+<!-- ... additional <Marker> tags cut for brevity ... --> 
+ 
+   </objects> 
+ 
+</MarkerSet> 

@@ -1,0 +1,21 @@
+<IKTaskSet name="gait2354_Scale"> 
+ 
+  <objects> 
+    <IKMarkerTask name="Sternum"> <weight>1</weight> </IKMarkerTask> 
+    <IKMarkerTask name="R.Acromium"> <weight>1</weight> </IKMarkerTask> 
+    <IKMarkerTask name="L.Acromium"> <weight>1</weight> </IKMarkerTask> 
+    <IKMarkerTask name="Top.Head"> <weight>1</weight> </IKMarkerTask> 
+    <!-- ... additional <IKMarkerTask> tags cut for brevity ...--> 
+ 
+    <!--Coordinates --> 
+    <IKCoordinateTask name="subtalar_angle_r"> <value>0</value> </IKCoordinateTask> 
+    <IKCoordinateTask name="mtp_angle_r"> <value>0</value> </IKCoordinateTask> 
+    <IKCoordinateTask name="subtalar_angle_l"> <value>0</value> </IKCoordinateTask> 
+    <IKCoordinateTask name="mtp_angle_l"> <value>0</value> </IKCoordinateTask> 
+    <IKCoordinateTask name="lumbar_extension"> 
+    <value>0</value> 
+    <weight>1000.0</weight> 
+    </IKCoordinateTask> 
+
+  </objects> 
+</IKTaskSet> 

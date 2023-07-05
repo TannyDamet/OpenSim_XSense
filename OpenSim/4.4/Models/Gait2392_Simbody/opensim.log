@@ -2118,3 +2118,55 @@ y[229] = /forceset/extobl_l/fiber_length
 [2023-06-19 11:24:28.672] [info] Loaded model 3DGaitModel2392 from file C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\gait2392_simbody.osim
 [2023-06-19 11:24:28.678] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
 [2023-06-19 11:24:28.680] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2023-06-27 09:37:13.494] [info] Updating Model file from 20303 to latest format...
+[2023-06-27 09:37:13.601] [info] Loaded model 3DGaitModel2392 from file C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\gait2392_simbody.osim
+[2023-06-27 09:37:13.610] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2023-06-27 09:37:13.612] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2023-06-27 09:37:24.003] [info] Storage: read data file = C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\subject01_walk1_grf.mot (nr=1501 nc=19)
+[2023-06-27 09:37:34.309] [info] Storage: read data file = C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\crouch1.mot (nr=120 nc=18)
+[2023-06-27 09:37:55.328] [info] Storage: read data file = C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\normal.mot (nr=51 nc=18)
+[2023-06-27 09:40:00.876] [info] Storage: read data file = C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\normal.mot (nr=51 nc=18)
+[2023-06-27 09:43:02.198] [info] Loading coordinates from file 'C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\normal.mot'.
+[2023-06-27 09:43:02.198] [info] Storage: read data file = C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\Tutorial1\normal.mot (nr=51 nc=18)
+[2023-06-27 09:43:02.199] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_tx/value in storage object.
+[2023-06-27 09:43:02.199] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_tz/value in storage object.
+[2023-06-27 09:43:02.199] [warning] Model::formCompleteStorages():  Did not find column /jointset/subtalar_r/subtalar_angle_r/value in storage object.
+[2023-06-27 09:43:02.199] [warning] Model::formCompleteStorages():  Did not find column /jointset/mtp_r/mtp_angle_r/value in storage object.
+[2023-06-27 09:43:02.199] [warning] Model::formCompleteStorages():  Did not find column /jointset/subtalar_l/subtalar_angle_l/value in storage object.
+[2023-06-27 09:43:02.199] [warning] Model::formCompleteStorages():  Did not find column /jointset/mtp_l/mtp_angle_l/value in storage object.
+[2023-06-27 09:43:02.229] [info] Found 51 state vectors with time stamps ranging from 0.0 to 1.0.
+[2023-06-27 09:43:02.251] [info] No external loads will be applied (external loads file not specified).
+[2023-06-27 09:43:02.270] [info] Executing the analyses from 0.0 to 1.0...
+[2023-06-27 09:43:02.366] [info] Printing results of investigation walk_normal to C:\Users\PC\Desktop
+[2023-06-27 09:43:02.367] [info] OutputReporter.printResults: 
+[2023-06-27 09:45:34.557] [info] Storage: read data file = C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\subject01_walk1_grf.mot (nr=1501 nc=19)
+[2023-06-27 09:46:07.471] [info] Loading coordinates from file 'C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\subject01_walk1_grf.mot'.
+[2023-06-27 09:46:07.471] [info] Storage: read data file = C:\Users\PC\Documents\GitHub\OpenSim_XSense\OpenSim\4.4\Models\Gait2392_Simbody\subject01_walk1_grf.mot (nr=1501 nc=19)
+[2023-06-27 09:46:07.489] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_tilt/value in storage object.
+[2023-06-27 09:46:07.489] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_list/value in storage object.
+[2023-06-27 09:46:07.489] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_rotation/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_tx/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_ty/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/ground_pelvis/pelvis_tz/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/hip_r/hip_flexion_r/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/hip_r/hip_adduction_r/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/hip_r/hip_rotation_r/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/knee_r/knee_angle_r/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/ankle_r/ankle_angle_r/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/subtalar_r/subtalar_angle_r/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/mtp_r/mtp_angle_r/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/hip_l/hip_flexion_l/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/hip_l/hip_adduction_l/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/hip_l/hip_rotation_l/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/knee_l/knee_angle_l/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/ankle_l/ankle_angle_l/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/subtalar_l/subtalar_angle_l/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/mtp_l/mtp_angle_l/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/back/lumbar_extension/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/back/lumbar_bending/value in storage object.
+[2023-06-27 09:46:07.490] [warning] Model::formCompleteStorages():  Did not find column /jointset/back/lumbar_rotation/value in storage object.
+[2023-06-27 09:46:07.963] [info] Found 1501 state vectors with time stamps ranging from 0.0 to 2.5.
+[2023-06-27 09:46:07.982] [info] No external loads will be applied (external loads file not specified).
+[2023-06-27 09:46:08.000] [info] Executing the analyses from 0.0 to 2.5...
+[2023-06-27 09:46:08.379] [info] Printing results of investigation walk_normal_pelvis to C:\Users\PC\Desktop
+[2023-06-27 09:46:08.380] [info] OutputReporter.printResults: 

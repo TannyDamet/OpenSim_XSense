@@ -31,11 +31,11 @@ import org.opensim.modeling.*
 
 %% Build an Xsens Settings Object. 
 % Instantiate the Reader Settings Class
-xsensSettings = XsensDataReaderSettings('myIMUMappings.xml');
+xsensSettings = XsensDataReaderSettings('myIMUMappings_4_5.xml');
 % Instantiate an XsensDataReader
 xsens = XsensDataReader(xsensSettings);
 % Get a table reference for the data
-tables = xsens.read('IMUData/');
+tables = xsens.read('Data/');
 % get the trial name from the settings
 trial = char(xsensSettings.get_trial_prefix());
 
