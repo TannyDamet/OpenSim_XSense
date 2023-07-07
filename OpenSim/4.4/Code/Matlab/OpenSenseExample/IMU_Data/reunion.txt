@@ -1,0 +1,5 @@
+- Synchronisation des imu (doc imu)
+
+- Position x y z (coude, poignet, epaule, hanche, genoue, cheville)
+
+- Mise à l'échelle
