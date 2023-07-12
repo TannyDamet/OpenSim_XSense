@@ -1,13 +1,19 @@
 %clc; clear all;
 close  all;
 
-data1 = open("Xsens_1.csv");
-data2 = open("Xsens_2.csv");
-data3 = open("Xsens_3.csv");
-data4 = open("Xsens_4.csv");
-data5 = open("Xsens_5.csv");
+% data1 = open("Xsens_1.csv");
+% data2 = open("Xsens_2.csv");
+% data3 = open("Xsens_3.csv");
+% data4 = open("Xsens_4.csv");
+% data5 = open("Xsens_5.csv");
 
-init_shift = 2000;
+data1 = open("Xsens_1_20230707_111200_241.csv");
+data2 = open("Xsens_2_20230707_111200_239.csv");
+data3 = open("Xsens_3_20230707_111200_242.csv");
+data4 = open("Xsens_4_20230707_111200_241.csv");
+data5 = open("Xsens_5_20230707_111200_243.csv");
+
+init_shift = 1;
 
 quat0_1 = data1.data(init_shift,3:6);
 quats_1 = data1.data(init_shift:end,3:6);
@@ -90,7 +96,7 @@ plotFrame(wFi2,'s')
 title("wFi2")
 
 % check size
-taille = min(size(quats_1,1),size(quats_2,1));
+taille = min([size(quats_1,1), size(quats_2,1), size(quats_3,1), size(quats_4,1), size(quats_5,1)]);
 display(taille)
 
 % init
@@ -181,14 +187,14 @@ for i= 1:200:taille
         subplot(2,5,7)
         plotFrame(wFi2,'s')
         title(strcat("wFi2 ",num2str(i,'%02d')))
-        
+
         subplot(2,5,3)
         plotFrame(i3wFi3,'o')
         title(strcat("i3wFi3 ",num2str(i,'%02d')))
         subplot(2,5,8)
         plotFrame(wFi3,'s')
         title(strcat("wFi3 ",num2str(i,'%02d')))
-        
+
         subplot(2,5,4)
         plotFrame(i4wFi4,'o')
         title(strcat("i4wFi4 ",num2str(i,'%02d')))

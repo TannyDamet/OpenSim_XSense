@@ -102,8 +102,8 @@ for i= 1:200:taille
 
 
 
-    euli1wRi1 =[euli1wRi1; (i1wRi1)];
-    euli2wRi2 = [euli2wRi2euleurDeg; euleurDeg(i2wRi2)];
+    euli1wRi1 =[euli1wRi1; euleurDeg(i1wRi1)];
+    euli2wRi2 = [euli2wRi2; euleurDeg(i2wRi2)];
     euli3wRi3 =[euli3wRi3; euleurDeg(i3wRi3)];
     euli4wRi4 = [euli4wRi4; euleurDeg(i4wRi4)];
     euliwRi1_est =[euliwRi1_est ;euleurDeg(wRi1_est)];
