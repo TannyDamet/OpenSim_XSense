@@ -1,11 +1,11 @@
 %clc; clear all; 
 close  all;
 
-data1 = open("Xsens_1_20230707_111200_241.csv");
-data2 = open("Xsens_2_20230707_111200_239.csv");
-data3 = open("Xsens_3_20230707_111200_242.csv");
-data4 = open("Xsens_4_20230707_111200_241.csv");
-data5 = open("Xsens_5_20230707_111200_243.csv");
+data1 = open("DATA\Xsens_1_20230707_111200_241.csv");
+data2 = open("DATA\Xsens_2_20230707_111200_239.csv");
+data3 = open("DATA\Xsens_3_20230707_111200_242.csv");
+data4 = open("DATA\Xsens_4_20230707_111200_241.csv");
+data5 = open("DATA\Xsens_5_20230707_111200_243.csv");
 
 init_shift = 2000;
 quat0_1 = data1.data(init_shift,3:6);

@@ -173,6 +173,18 @@ for i = 1:10:taille
     euliwRi4_est = [euliwRi4_est; euleurDeg(wRi4_est)];
     euliwRi5_est = [euliwRi5_est; euleurDeg(wRi5_est)];
 
+    % euli1wRi1 = [euli1wRi1; eul2rpy(i1wRi1, 'zyx')];
+    % euli2wRi2 = [euli2wRi2; eul2rpy(i2wRi2, 'zyx')];
+    % euli3wRi3 = [euli3wRi3; eul2rpy(i3wRi3, 'zyx')];
+    % euli4wRi4 = [euli4wRi4; eul2rpy(i4wRi4, 'zyx')];
+    % euli5wRi5 = [euli5wRi5; eul2rpy(i5wRi5, 'zyx')];
+    % 
+    % euliwRi1_est = [euliwRi1_est; eul2rpy(wRi1_est, 'zyx')];
+    % euliwRi2_est = [euliwRi2_est; eul2rpy(wRi2_est, 'zyx')];
+    % euliwRi3_est = [euliwRi3_est; eul2rpy(wRi3_est, 'zyx')];
+    % euliwRi4_est = [euliwRi4_est; eul2rpy(wRi4_est, 'zyx')];
+    % euliwRi5_est = [euliwRi5_est; eul2rpy(wRi5_est, 'zyx')];
+
     % IMU 1
 
     % orientation de l'imu dans son repere propre
@@ -270,6 +282,12 @@ eulwRi3w = euleurDeg(wRi3w);
 eulwRi4w = euleurDeg(wRi4w);
 eulwRi5w = euleurDeg(wRi5w);
 
+% eulwRi1w = eul2rpy(wRi1w, 'zyx');
+% eulwRi2w = eul2rpy(wRi2w, 'zyx');
+% eulwRi3w = eul2rpy(wRi3w, 'zyx');
+% eulwRi4w = eul2rpy(wRi4w, 'zyx');
+% eulwRi5w = eul2rpy(wRi5w, 'zyx');
+
 euler = [eulwRi1w;eulwRi2w;eulwRi3w;eulwRi4w;eulwRi5w]
 
 % Sauvegarder les données modifiées dans de nouveaux fichiers CSV
@@ -290,24 +308,24 @@ plot(euli1wRi1, 'r--')
 hold on
 plot(euliwRi1_est, 'r')
 hold on
-plot(euli2wRi2, 'g--')
-hold on
-plot(euliwRi2_est, 'g')
-hold on
-plot(euli3wRi3, 'b--')
-hold on
-plot(euliwRi3_est, 'b')
-hold on
-plot(euli4wRi4, 'k--')
-hold on
-plot(euliwRi4_est, 'k')
-hold on
-plot(euli5wRi5, 'y--')
-hold on
-plot(euliwRi5_est, 'y')
-hold on
-legend('IMU 1/1_x','IMU 1/1_y','IMU 1/1_z','IMU 1/W_x','IMU 1/W_y','IMU 1/W_z','IMU 2/2_x','IMU 2/2_y','IMU 2/2_z','IMU 2/W_x','IMU 2/W_y','IMU 2/W_z','IMU 3/3_x','IMU 3/3_y','IMU 3/3_z','IMU 3/W_x','IMU 3/W_y','IMU 3/W_z')
-legend('IMU 4/4_x','IMU 4/4_y','IMU 4/4_z','IMU 4/W_x','IMU 4/W_y','IMU 4/W_z','IMU 5/5_x','IMU 5/5_y','IMU 5/5_z','IMU 5/W_x','IMU 5/W_y','IMU 5/W_z')
+% plot(euli2wRi2, 'g--')
+% hold on
+% plot(euliwRi2_est, 'g')
+% hold on
+% plot(euli3wRi3, 'b--')
+% hold on
+% plot(euliwRi3_est, 'b')
+% hold on
+% plot(euli4wRi4, 'k--')
+% hold on
+% plot(euliwRi4_est, 'k')
+% hold on
+% plot(euli5wRi5, 'y--')
+% hold on
+% plot(euliwRi5_est, 'y')
+% hold on
+% legend('IMU 1/1', 'IMU 1/W.', 'IMU 2/2', 'IMU 2/W.', 'IMU 3/3', 'IMU 3/W.', 'IMU 4/4', 'IMU 4/W.', 'IMU 5/5', 'IMU 5/W.')
+legend('IMU 1/1', 'IMU 1/W.')
 xlabel('Iteration')
 ylabel('Euler Angles (degrees)')
 
@@ -315,6 +333,10 @@ function euler_deg =euleurDeg(R)
  euler_deg = rad2deg(rotm2eul(R));
 end
 
+% function rpy = eul2rpy(R, seq)
+% rpy = rotm2eul(R, seq);
+% rpy = rad2deg(rpy);
+% end
 
 function rF = rotateFrame(wRi)
 zero = [0,0,0];

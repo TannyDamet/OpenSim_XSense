@@ -1,10 +1,10 @@
 clc; clear all; close  all;
 
-data1 = open("Xsens_1_20230707_111200_241.csv");
+data1 = open("DATA\Xsens_1_20230707_111200_241.csv");
 quat0_1 = data1.data(4,3:6);
 quats_1 = data1.data(4:end,3:6);
 
-data2 = open("Xsens_2_20230707_111200_239.csv");
+data2 = open("DATA\Xsens_2_20230707_111200_239.csv");
 quat0_2 = data2.data(4,3:6);
 quats_2 = data2.data(4:end,3:6);
 

@@ -2,30 +2,53 @@ clc;
 clear all;
 close all;
 
-% data1 = readmatrix("3\Xsens_1.csv");
-% data2 = readmatrix("3\Xsens_2.csv");
-% data3 = readmatrix("3\Xsens_3.csv");
-% data4 = readmatrix("3\Xsens_4.csv");
-% data5 = readmatrix("3\Xsens_5.csv");
+data1 = open("DATA\Xsens_1_20230707_111200_241.csv");
+data2 = open("DATA\Xsens_2_20230707_111200_239.csv");
+data3 = open("DATA\Xsens_3_20230707_111200_242.csv");
+data4 = open("DATA\Xsens_4_20230707_111200_241.csv");
+data5 = open("DATA\Xsens_5_20230707_111200_243.csv");
 
-data1 = readmatrix("pos_init_2\Xsens_1.csv");
-data2 = readmatrix("pos_init_2\Xsens_2.csv");
-data3 = readmatrix("pos_init_2\Xsens_3.csv");
-data4 = readmatrix("pos_init_2\Xsens_4.csv");
-data5 = readmatrix("pos_init_2\Xsens_5.csv");
+% headers1 = data1.colheaders;
+% headers2 = data2.colheaders;
+% headers3 = data3.colheaders;
+% headers4 = data4.colheaders;
+% headers5 = data5.colheaders;
+
+textdata1 = data1.textdata;
+textdata2 = data2.textdata;
+textdata3 = data3.textdata;
+textdata4 = data4.textdata;
+textdata5 = data5.textdata;
 
 init_shift = 1;
 
-quat0_1 = data1(init_shift, 3:6);
-quats_1 = data1(init_shift:end, 3:6);
-quat0_2 = data2(init_shift, 3:6);
-quats_2 = data2(init_shift:end, 3:6);
-quat0_3 = data3(init_shift, 3:6);
-quats_3 = data3(init_shift:end, 3:6);
-quat0_4 = data4(init_shift, 3:6);
-quats_4 = data4(init_shift:end, 3:6);
-quat0_5 = data5(init_shift, 3:6);
-quats_5 = data5(init_shift:end, 3:6);
+quat0_1 = data1.data(init_shift,3:6);
+quats_1 = data1.data(init_shift:end,3:6);
+quat0_2 = data2.data(init_shift,3:6);
+quats_2 = data2.data(init_shift:end,3:6);
+quat0_3 = data3.data(init_shift,3:6);
+quats_3 = data3.data(init_shift:end,3:6);
+quat0_4 = data4.data(init_shift,3:6);
+quats_4 = data4.data(init_shift:end,3:6);
+quat0_5 = data5.data(init_shift, 3:6);
+quats_5 = data5.data(init_shift:end, 3:6);
+
+% data1 = readmatrix("pos_init_2\Xsens_1.csv");
+% data2 = readmatrix("pos_init_2\Xsens_2.csv");
+% data3 = readmatrix("pos_init_2\Xsens_3.csv");
+% data4 = readmatrix("pos_init_2\Xsens_4.csv");
+% data5 = readmatrix("pos_init_2\Xsens_5.csv");
+
+% quat0_1 = data1(init_shift, 3:6);
+% quats_1 = data1(init_shift:end, 3:6);
+% quat0_2 = data2(init_shift, 3:6);
+% quats_2 = data2(init_shift:end, 3:6);
+% quat0_3 = data3(init_shift, 3:6);
+% quats_3 = data3(init_shift:end, 3:6);
+% quat0_4 = data4(init_shift, 3:6);
+% quats_4 = data4(init_shift:end, 3:6);
+% quat0_5 = data5(init_shift, 3:6);
+% quats_5 = data5(init_shift:end, 3:6);
 
 % etalonnage poure trouver wRixw
 wRi0_x = [-1 0 0; 0 0 1; 0 1 0];
@@ -160,7 +183,7 @@ for i = 1:taille
     wRi3_est = wRi3w * i3wRi3;
     wRi4_est = wRi4w * i4wRi4;
     wRi5_est = wRi5w * i5wRi5;
-
+    
     euli1wRi1 = [euli1wRi1; euleurDeg(i1wRi1)];
     euli2wRi2 = [euli2wRi2; euleurDeg(i2wRi2)];
     euli3wRi3 = [euli3wRi3; euleurDeg(i3wRi3)];
@@ -209,23 +232,23 @@ for i = 1:taille
     wFi5 = rotateFrame(wRi5_est);
 
     % Mise à jour de data1
-    data1(i, 3:6) = rotm2quat(wRi1_est);
+    data1.data(i, 3:6) = rotm2quat(wRi1_est);
 
     % Mise à jour de data2
-    data2(i, 3:6) = rotm2quat(wRi2_est);
+    data2.data(i, 3:6) = rotm2quat(wRi2_est);
 
     % Mise à jour de data3
-    data3(i, 3:6) = rotm2quat(wRi3_est);
+    data3.data(i, 3:6) = rotm2quat(wRi3_est);
 
     % Mise à jour de data4
-    data4(i, 3:6) = rotm2quat(wRi4_est);
+    data4.data(i, 3:6) = rotm2quat(wRi4_est);
 
     % Mise à jour de data5
-    data5(i, 3:6) = rotm2quat(wRi5_est);
+    data5.data(i, 3:6) = rotm2quat(wRi5_est);
 
     % Pour l'affichage
 
-    if mod(i, 10) == 0
+    if mod(i, 100) == 0
         subplot(2, 5, 1)
         plotFrame(i1wFi1, 'o')
         title(sprintf("i1wFi1 %02d", i))
@@ -265,19 +288,19 @@ for i = 1:taille
     %    pause(0.00001);
     
     % Mise à jour de data1
-    data1 = data1(1:taille, :);
+    data1.data = data1.data(1:taille, :);
 
     % Mise à jour de data2
-    data2 = data2(1:taille, :);
+    data2.data = data2.data(1:taille, :);
 
     % Mise à jour de data3
-    data3 = data3(1:taille, :);
+    data3.data = data3.data(1:taille, :);
 
     % Mise à jour de data4
-    data4 = data4(1:taille, :);
+    data4.data = data4.data(1:taille, :);
 
     % Mise à jour de data5
-    data5 = data5(1:taille, :);
+    data5.data = data5.data(1:taille, :);
 
 end
 
@@ -290,17 +313,30 @@ eulwRi5w = euleurDeg(wRi5w);
 euler = [eulwRi1w;eulwRi2w;eulwRi3w;eulwRi4w;eulwRi5w]
 
 % Sauvegarder les données modifiées dans de nouveaux fichiers CSV
-% writematrix(data1, "3\Xsens_1_modified.csv");
-% writematrix(data2, "3\Xsens_2_modified.csv");
-% writematrix(data3, "3\Xsens_3_modified.csv");
-% writematrix(data4, "3\Xsens_4_modified.csv");
-% writematrix(data5, "3\Xsens_5_modified.csv");
 
-writematrix(data1, "pos_init_2\Xsens_1_modified.csv");
-writematrix(data2, "pos_init_2\Xsens_2_modified.csv");
-writematrix(data3, "pos_init_2\Xsens_3_modified.csv");
-writematrix(data4, "pos_init_2\Xsens_4_modified.csv");
-writematrix(data5, "pos_init_2\Xsens_5_modified.csv");
+% writematrix(data1.data, "DATA\Xsens_1_modified.csv");
+% writematrix(data2.data, "DATA\Xsens_2_modified.csv");
+% writematrix(data3.data, "DATA\Xsens_3_modified.csv");
+% writematrix(data4.data, "DATA\Xsens_4_modified.csv");
+% writematrix(data5.data, "DATA\Xsens_5_modified.csv");
+
+data1_modified = [textdata1; num2cell(data1.data)];
+data2_modified = [textdata2; num2cell(data2.data)];
+data3_modified = [textdata3; num2cell(data3.data)];
+data4_modified = [textdata4; num2cell(data4.data)];
+data5_modified = [textdata5; num2cell(data5.data)];
+
+writecell(data1_modified, "DATA\Xsens_1_modified.csv");
+writecell(data2_modified, "DATA\Xsens_2_modified.csv");
+writecell(data3_modified, "DATA\Xsens_3_modified.csv");
+writecell(data4_modified, "DATA\Xsens_4_modified.csv");
+writecell(data5_modified, "DATA\Xsens_5_modified.csv");
+
+% writematrix([data1.colheaders; data1.textdata; data1.data], "DATA\Xsens_1_modified.csv");
+% writematrix([data2.colheaders; data2.textdata; data2.data], "DATA\Xsens_2_modified.csv");
+% writematrix([data3.colheaders; data3.textdata; data3.data], "DATA\Xsens_3_modified.csv");
+% writematrix([data4.colheaders; data4.textdata; data4.data], "DATA\Xsens_4_modified.csv");
+% writematrix([data5.colheaders; data5.textdata; data5.data], "DATA\Xsens_5_modified.csv");
 
 figure(3)
 plot(euli1wRi1, 'r--')
