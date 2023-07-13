@@ -1,18 +1,16 @@
-clc;
-clear all;
+% clc;
+% clear all;
 close all;
+
+%% 
+
+% Récupération des données 
 
 data1 = open("DATA\Xsens_1_20230707_111200_241.csv");
 data2 = open("DATA\Xsens_2_20230707_111200_239.csv");
 data3 = open("DATA\Xsens_3_20230707_111200_242.csv");
 data4 = open("DATA\Xsens_4_20230707_111200_241.csv");
 data5 = open("DATA\Xsens_5_20230707_111200_243.csv");
-
-% headers1 = data1.colheaders;
-% headers2 = data2.colheaders;
-% headers3 = data3.colheaders;
-% headers4 = data4.colheaders;
-% headers5 = data5.colheaders;
 
 textdata1 = data1.textdata;
 textdata2 = data2.textdata;
@@ -33,24 +31,8 @@ quats_4 = data4.data(init_shift:end,3:6);
 quat0_5 = data5.data(init_shift, 3:6);
 quats_5 = data5.data(init_shift:end, 3:6);
 
-% data1 = readmatrix("pos_init_2\Xsens_1.csv");
-% data2 = readmatrix("pos_init_2\Xsens_2.csv");
-% data3 = readmatrix("pos_init_2\Xsens_3.csv");
-% data4 = readmatrix("pos_init_2\Xsens_4.csv");
-% data5 = readmatrix("pos_init_2\Xsens_5.csv");
+%% etalonnage poure trouver wRixw
 
-% quat0_1 = data1(init_shift, 3:6);
-% quats_1 = data1(init_shift:end, 3:6);
-% quat0_2 = data2(init_shift, 3:6);
-% quats_2 = data2(init_shift:end, 3:6);
-% quat0_3 = data3(init_shift, 3:6);
-% quats_3 = data3(init_shift:end, 3:6);
-% quat0_4 = data4(init_shift, 3:6);
-% quats_4 = data4(init_shift:end, 3:6);
-% quat0_5 = data5(init_shift, 3:6);
-% quats_5 = data5(init_shift:end, 3:6);
-
-% etalonnage poure trouver wRixw
 wRi0_x = [-1 0 0; 0 0 1; 0 1 0];
 
 i1wRi1 = quat2rotm(quat0_1);
@@ -74,6 +56,8 @@ wRi2_est = wRi2w * i2wRi2;
 wRi3_est = wRi3w * i3wRi3;
 wRi4_est = wRi4w * i4wRi4;
 wRi5_est = wRi5w * i5wRi5;
+
+%% Orientations
 
 % IMU 1
 
@@ -109,6 +93,8 @@ wFi4 = rotateFrame(wRi4_est);
 i5wFi5 = rotateFrame(i5wRi5);
 % orientation de l'imu dans le repere monde
 wFi5 = rotateFrame(wRi5_est);
+
+%% Affichages des repères pour les positions initiales
 
 figure(1)
 
@@ -151,6 +137,8 @@ title("wFi5")
 taille = min([size(quats_1,1), size(quats_2,1), size(quats_3,1), size(quats_4,1), size(quats_5,1)]);
 display(taille)
 
+%% Initialisations
+
 % init
 euli1wRi1 = [];
 euli2wRi2 = [];
@@ -163,6 +151,8 @@ euliwRi2_est = [];
 euliwRi3_est = [];
 euliwRi4_est = [];
 euliwRi5_est = [];
+
+%% Boucle sur toutes les données
 
 figure(2)
 
@@ -326,21 +316,7 @@ for i = 1:taille
 
 end
 
-eulwRi1w = euleurDeg(wRi1w);
-eulwRi2w = euleurDeg(wRi2w);
-eulwRi3w = euleurDeg(wRi3w);
-eulwRi4w = euleurDeg(wRi4w);
-eulwRi5w = euleurDeg(wRi5w);
-
-euler = [eulwRi1w;eulwRi2w;eulwRi3w;eulwRi4w;eulwRi5w]
-
-% Sauvegarder les données modifiées dans de nouveaux fichiers CSV
-
-% writematrix(data1.data, "DATA\Xsens_1_modified.csv");
-% writematrix(data2.data, "DATA\Xsens_2_modified.csv");
-% writematrix(data3.data, "DATA\Xsens_3_modified.csv");
-% writematrix(data4.data, "DATA\Xsens_4_modified.csv");
-% writematrix(data5.data, "DATA\Xsens_5_modified.csv");
+%% Sauvegarder les données modifiées dans de nouveaux fichiers CSV
 
 data1_modified = [textdata1; num2cell(data1.data)];
 data2_modified = [textdata2; num2cell(data2.data)];
@@ -354,11 +330,7 @@ writecell(data3_modified, "DATA\Xsens_3_modified.csv");
 writecell(data4_modified, "DATA\Xsens_4_modified.csv");
 writecell(data5_modified, "DATA\Xsens_5_modified.csv");
 
-% writematrix([data1.colheaders; data1.textdata; data1.data], "DATA\Xsens_1_modified.csv");
-% writematrix([data2.colheaders; data2.textdata; data2.data], "DATA\Xsens_2_modified.csv");
-% writematrix([data3.colheaders; data3.textdata; data3.data], "DATA\Xsens_3_modified.csv");
-% writematrix([data4.colheaders; data4.textdata; data4.data], "DATA\Xsens_4_modified.csv");
-% writematrix([data5.colheaders; data5.textdata; data5.data], "DATA\Xsens_5_modified.csv");
+%% Evolution des angles d'euler
 
 figure(3)
 plot(euli1wRi1, 'r--')
@@ -384,6 +356,9 @@ hold on
 legend('IMU 1/1_x','IMU 1/1_y','IMU 1/1_z','IMU 1/W_x','IMU 1/W_y','IMU 1/W_z','IMU 2/2_x','IMU 2/2_y','IMU 2/2_z','IMU 2/W_x','IMU 2/W_y','IMU 2/W_z','IMU 3/3_x','IMU 3/3_y','IMU 3/3_z','IMU 3/W_x','IMU 3/W_y','IMU 3/W_z','IMU 4/4_x','IMU 4/4_y','IMU 4/4_z','IMU 4/W_x','IMU 4/W_y','IMU 4/W_z','IMU 5/5_x','IMU 5/5_y','IMU 5/5_z','IMU 5/W_x','IMU 5/W_y','IMU 5/W_z')
 xlabel('Iteration')
 ylabel('Euler Angles (degrees)')
+
+
+%% Fonctions 
 
 function euler_deg =euleurDeg(R)
 euler_deg = rad2deg(rotm2eul(R));
