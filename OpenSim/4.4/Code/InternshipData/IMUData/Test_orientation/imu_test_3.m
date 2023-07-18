@@ -6,11 +6,11 @@ close all;
 
 % Récupération des données 
 
-data1 = open("DATA\Xsens_1_20230707_111200_241.csv");
-data2 = open("DATA\Xsens_2_20230707_111200_239.csv");
-data3 = open("DATA\Xsens_3_20230707_111200_242.csv");
-data4 = open("DATA\Xsens_4_20230707_111200_241.csv");
-data5 = open("DATA\Xsens_5_20230707_111200_243.csv");
+data1 = open("DATA\pos_w\Xsens_1.csv");
+data2 = open("DATA\pos_w\Xsens_2.csv");
+data3 = open("DATA\pos_w\Xsens_3.csv");
+data4 = open("DATA\pos_w\Xsens_4.csv");
+data5 = open("DATA\pos_w\Xsens_5.csv");
 
 textdata1 = data1.textdata;
 textdata2 = data2.textdata;
@@ -324,11 +324,11 @@ data3_modified = [textdata3; num2cell(data3.data)];
 data4_modified = [textdata4; num2cell(data4.data)];
 data5_modified = [textdata5; num2cell(data5.data)];
 
-writecell(data1_modified, "DATA\Xsens_1_modified.csv");
-writecell(data2_modified, "DATA\Xsens_2_modified.csv");
-writecell(data3_modified, "DATA\Xsens_3_modified.csv");
-writecell(data4_modified, "DATA\Xsens_4_modified.csv");
-writecell(data5_modified, "DATA\Xsens_5_modified.csv");
+writecell(data1_modified, "DATA\pos_w\Xsens_1_modified.csv");
+writecell(data2_modified, "DATA\pos_w\Xsens_2_modified.csv");
+writecell(data3_modified, "DATA\pos_w\Xsens_3_modified.csv");
+writecell(data4_modified, "DATA\pos_w\Xsens_4_modified.csv");
+writecell(data5_modified, "DATA\pos_w\Xsens_5_modified.csv");
 
 %% Evolution des angles d'euler
 
