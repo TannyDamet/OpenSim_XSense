@@ -1,0 +1,18 @@
+BILAN
+
+Methode de mise à l'échelle : OK
+
+Mesures réelles : A faire
+
+Récupération positions au repos : OK
+
+Récupération positions en mouvement : OK
+
+Récupérations et conversion des données : OK
+
+Synchronisation des IMU : OK
+
+Calibration de chaque IMU à l'état initial : OK
+
+Calibration des IMU pour le calcul de la Cinématique inverse : A Revoir 
+

@@ -1,0 +1,7 @@
+REUNION 06/07/2023
+
+- Synchronisation des imu (doc imu)
+
+- Position x y z (coude, poignet, epaule, hanche, genoue)
+
+- Mise à l'échelle

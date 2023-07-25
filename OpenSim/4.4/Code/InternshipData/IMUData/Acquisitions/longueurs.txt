@@ -1,0 +1,28 @@
+distance_Epaule_Coude_1 =
+
+    0.2998
+
+
+distance_Epaule_Coude_2 =
+
+    0.2867
+
+
+distance_coude_1_poignet =
+
+    0.2364
+
+
+distance_coude_2_poignet =
+
+    0.2525
+
+
+distance_Epaule_poignet =
+
+    0.5360
+
+
+distance_Epaule_l_Epaule_r =
+
+    0.4291
