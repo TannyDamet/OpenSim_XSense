@@ -371,28 +371,84 @@ writecell(data5_modified, Xsens_5_modified);
 
 %% Evolution des angles d'euler
 
+% Plot X 
+
 figure(3)
-plot(euli1wRi1, 'r--')
+plot(euli1wRi1(:,1),'r--')
 hold on
-plot(euliwRi1_est, 'r')
+plot(euliwRi1_est(:,1),'r')
 hold on
-plot(euli2wRi2, 'g--')
+plot(euli2wRi2(:,1),'g--')
 hold on
-plot(euliwRi2_est, 'g')
+plot(euliwRi2_est(:,1),'g')
 hold on
-plot(euli3wRi3, 'b--')
+plot(euli3wRi3(:,1),'b--')
 hold on
-plot(euliwRi3_est, 'b')
+plot(euliwRi3_est(:,1),'b')
 hold on
-plot(euli4wRi4, 'k--')
+plot(euli4wRi4(:,1),'k--')
 hold on
-plot(euliwRi4_est, 'k')
+plot(euliwRi4_est(:,1),'k')
 hold on
-plot(euli5wRi5, 'y--')
+plot(euli5wRi5(:,1),'y--')
 hold on
-plot(euliwRi5_est, 'y')
+plot(euliwRi5_est(:,1),'y')
 hold on
-legend('IMU 1/1_x','IMU 1/1_y','IMU 1/1_z','IMU 1/W_x','IMU 1/W_y','IMU 1/W_z','IMU 2/2_x','IMU 2/2_y','IMU 2/2_z','IMU 2/W_x','IMU 2/W_y','IMU 2/W_z','IMU 3/3_x','IMU 3/3_y','IMU 3/3_z','IMU 3/W_x','IMU 3/W_y','IMU 3/W_z','IMU 4/4_x','IMU 4/4_y','IMU 4/4_z','IMU 4/W_x','IMU 4/W_y','IMU 4/W_z','IMU 5/5_x','IMU 5/5_y','IMU 5/5_z','IMU 5/W_x','IMU 5/W_y','IMU 5/W_z')
+legend('IMU 1/1_x','IMU 1/W_x','IMU 2/2_x','IMU 2/W_x','IMU 3/3_x','IMU 3/W_x','IMU 4/4_x','IMU 4/W_x','IMU 5/5_x','IMU 5/W_x')
+xlabel('Iteration')
+ylabel('Euler Angles (degrees)')
+
+% Plot Y 
+
+figure(4)
+plot(euli1wRi1(:,2),'r--')
+hold on
+plot(euliwRi1_est(:,2),'r')
+hold on
+plot(euli2wRi2(:,2),'g--')
+hold on
+plot(euliwRi2_est(:,2),'g')
+hold on
+plot(euli3wRi3(:,2),'b--')
+hold on
+plot(euliwRi3_est(:,2),'b')
+hold on
+plot(euli4wRi4(:,2),'k--')
+hold on
+plot(euliwRi4_est(:,2),'k')
+hold on
+plot(euli5wRi5(:,2),'y--')
+hold on
+plot(euliwRi5_est(:,2),'y')
+hold on
+legend('IMU 1/1_y','IMU 1/W_y','IMU 2/2_y','IMU 2/W_y','IMU 3/3_y','IMU 3/W_y','IMU 4/4_y','IMU 4/W_y','IMU 5/5_y','IMU 5/W_y')
+xlabel('Iteration')
+ylabel('Euler Angles (degrees)')
+
+% Plot Z
+
+figure(5)
+plot(euli1wRi1(:,3),'r--')
+hold on
+plot(euliwRi1_est(:,3),'r')
+hold on
+plot(euli2wRi2(:,3),'g--')
+hold on
+plot(euliwRi2_est(:,3),'g')
+hold on
+plot(euli3wRi3(:,3),'b--')
+hold on
+plot(euliwRi3_est(:,3),'b')
+hold on
+plot(euli4wRi4(:,3),'k--')
+hold on
+plot(euliwRi4_est(:,3),'k')
+hold on
+plot(euli5wRi5(:,3),'y--')
+hold on
+plot(euliwRi5_est(:,3),'y')
+hold on
+legend('IMU 1/1_z','IMU 1/W_z','IMU 2/2_z','IMU 2/W_z','IMU 3/3_z','IMU 3/W_z','IMU 4/4_z','IMU 4/W_z','IMU 5/5_z','IMU 5/W_z')
 xlabel('Iteration')
 ylabel('Euler Angles (degrees)')
 

@@ -1,4 +1,4 @@
-function Tableau_de_mesure = Mesure(model)
+function Tableau_de_mesure = Mesure(model,cheminFichier)
 
 import org.opensim.modeling.*;
 
@@ -9,7 +9,7 @@ bodyset = myModel.getBodySet();
 state = myModel.initSystem();
 
 % Noms spécifiés dans l'ordre souhaité
-noms_specifies = {'Epaule_Coude (Radius)', 'Epaule_Coude (Cubitus)', 'Coude_Poignet (Radius)', 'Coude_Poignet (Cubitus)', 'Epaule_Poignet', 'Epaule_gauche_droite', 'Hanche_Genou', 'Genou_Cheville', 'Hanche_Cheville'};
+noms_specifies = {'Epaule_Coude (Radius)', 'Epaule_Coude (Cubitus)', 'Coude_Poignet (Radius)', 'Coude_Poignet (Cubitus)', 'Epaule_Poignet', 'Epaule_gauche_droite', 'Hanche_Genou', 'Genou_Cheville', 'Hanche_Cheville','Hanche_gauche_droite'};
 
 % Créez une structure pour stocker les noms et les valeurs des distances
 mesures = struct('Nom', {}, 'Distance', {});
@@ -22,8 +22,9 @@ indiceCoude_2_l = bodyset.getIndex('ulna_l');
 indicePoignet_l = bodyset.getIndex('hand_l');
 
 indiceHanche_l = bodyset.getIndex('femur_l');
+indiceHanche_r = bodyset.getIndex('femur_r');
 indiceGenou_l = bodyset.getIndex('tibia_l');
-indiceCheville_l = bodyset.getIndex('calcn_r');
+indiceCheville_l = bodyset.getIndex('calcn_l');
 
 % Obtenez les positions de l'épaule et du coude dans le référentiel du sol
 posEpaule_l = bodyset.get(indiceEpaule_l).getPositionInGround(state);
@@ -33,6 +34,7 @@ posCoude_2_l = bodyset.get(indiceCoude_2_l).getPositionInGround(state);
 posPoignet_l = bodyset.get(indicePoignet_l).getPositionInGround(state);
 
 posHanche_l = bodyset.get(indiceHanche_l).getPositionInGround(state);
+posHanche_r = bodyset.get(indiceHanche_r).getPositionInGround(state);
 posGenou_l = bodyset.get(indiceGenou_l).getPositionInGround(state);
 posCheville_l = bodyset.get(indiceCheville_l).getPositionInGround(state);
 
@@ -53,9 +55,10 @@ distance_Epaule_l_Epaule_r = norm([posEpaule_l.get(0) - posEpaule_r.get(0), posE
 distance_Hanche_Genou_l = norm([posHanche_l.get(0) - posGenou_l.get(0), posHanche_l.get(1) - posGenou_l.get(1), posHanche_l.get(2) - posGenou_l.get(2)]);
 distance_Genou_Cheville_l = norm([posGenou_l.get(0) - posCheville_l.get(0), posGenou_l.get(1) - posCheville_l.get(1), posGenou_l.get(2) - posCheville_l.get(2)]);
 distance_Hanche_Cheville_l = norm([posHanche_l.get(0) - posCheville_l.get(0), posHanche_l.get(1) - posCheville_l.get(1), posHanche_l.get(2) - posCheville_l.get(2)]);
+distance_Hanche_l_Hanche_r = norm([posHanche_l.get(0) - posHanche_r.get(0), posHanche_l.get(1) - posHanche_r.get(1), posHanche_l.get(2) - posHanche_r.get(2)]);
 
 
-distances_calculees = [distance_Epaule_Coude_1_l;distance_Epaule_Coude_2_l;distance_coude_1_poignet_l;distance_coude_2_poignet_l;distance_Epaule_poignet_l;distance_Epaule_l_Epaule_r;distance_Hanche_Genou_l;distance_Genou_Cheville_l;distance_Hanche_Cheville_l];
+distances_calculees = [distance_Epaule_Coude_1_l;distance_Epaule_Coude_2_l;distance_coude_1_poignet_l;distance_coude_2_poignet_l;distance_Epaule_poignet_l;distance_Epaule_l_Epaule_r;distance_Hanche_Genou_l;distance_Genou_Cheville_l;distance_Hanche_Cheville_l;distance_Hanche_l_Hanche_r];
 
 k = 1;
 
@@ -76,7 +79,8 @@ end
 Tableau_de_mesure = struct2table(mesures);
 
 % Sauvegardez le tableau dans un fichier CSV
-writetable(Tableau_de_mesure, 'mesures.csv');
+
+writetable(Tableau_de_mesure, cheminFichier);
 
 end
 
