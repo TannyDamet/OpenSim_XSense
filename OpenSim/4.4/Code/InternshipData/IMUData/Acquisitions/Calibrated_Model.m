@@ -34,7 +34,7 @@ modelFileName = 'Rajagopal2015.osim';          % The path to an input model
 
 orientationsFileNames = {'DATA\Mouv_1\Xsens_1.sto','DATA\Mouv_1\Xsens_2.sto','DATA\Mouv_1\Xsens_3.sto','DATA\Mouv_1\Xsens_4.sto','DATA\Mouv_1\Xsens_5.sto'};   % The paths to orientation data for calibration 
 % sensor_to_opensim_rotations = [Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2)]; % The rotations of IMU data to the OpenSim world frame 
-sensor_to_opensim_rotations = [Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, -pi/4, -pi/2)]; % The rotations of IMU data to the OpenSim world frame 
+sensor_to_opensim_rotations = [Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2),Vec3(-pi/2, 0, -pi/2)]; % The rotations of IMU data to the OpenSim world frame 
 
 baseIMUName = {'torso_imu','humerus_l_imu','radius_l_imu','humerus_r_imu','radius_r_imu'};                     % The base IMU is the IMU on the base body of the model that dictates the heading (forward) direction of the model.
 baseIMUHeading = 'z';                           % The Coordinate Axis of the base IMU that points in the heading direction. 
