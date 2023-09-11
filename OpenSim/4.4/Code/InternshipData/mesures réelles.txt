@@ -1,0 +1,11 @@
+Avant Bras 28
+
+Bras 32
+
+Epaule 40
+
+Cuisse 52
+
+Jambe 50
+
+Hanche 20
